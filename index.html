@@ -24,25 +24,29 @@
         <form id="new-post-form">
             <h4>Create New Post</h4>
             <label for="new-title">Title:</label>
-            <input type="text" name="title" id="new-title" required class="p-2 border rounded-md w-full mb-2">
+            <input type="text" name="title" id="new-title">
             <label for="new-content">Content:</label>
-            <textarea name="content" id="new-content" rows="5" required class="p-2 border rounded-md w-full mb-2"></textarea>
+            <textarea name="content" id="new-content" rows="5"></textarea>
             <label for="new-author">Author:</label>
-            <input type="text" name="author" id="new-author" required class="p-2 border rounded-md w-full mb-2">
+            <input type="text" name="author" id="new-author">
             <label for="new-image">Image URL:</label>
-            <input type="text" name="image" id="new-image" class="p-2 border rounded-md w-full mb-2">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Add Post</button>
+            <input type="text" name="image" id="new-image">
+            <button type="submit">Add Post</button>
         </form>
-        
+
             <h2>Add New Post</h2>
-            <form id="edit-post-form" class="hidden"> <!-- Add 'hidden' class by default -->
+            <form id="edit-post-form" class="hidden">
                 <h4>Update Post Details</h4>
                 <label for="edit-title">Title:</label>
-                <input type="text" name="title" id="edit-title" class="p-2 border rounded-md w-full mb-2">
+                <input type="text" id="edit-title" >
                 <label for="edit-content">Content:</label>
-                <textarea name="content" id="edit-content" rows="5" class="p-2 border rounded-md w-full mb-4"></textarea>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Update Post</button>
-                <button type="button" id="cancel-edit" class="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md ml-2">Cancel</button>
+                <textarea id="edit-content" rows="5" ></textarea>
+                <label for="edit-author">Author:</label>
+                <input type="text" id="edit-author" >
+                <label for="edit-image">Image URL:</label>
+                <input type="text" id="edit-image" >
+                <button type="submit">Update Post</button>
+                <button type="button" id="cancel-edit">Cancel</button>
             </form>
         </section>
     </main>
