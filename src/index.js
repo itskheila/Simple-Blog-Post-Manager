@@ -12,6 +12,7 @@ function displayPosts() {
                     <img src="${post.image || ''}" alt="${post.title}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;margin-right:8px;vertical-align:middle;">
                     <span>${post.title}</span>
                 `;
+                //dataset.id is used to store the post ID for easy access 
                 li.dataset.id = post.id;
                 li.style.display = "flex";
                 li.style.alignItems = "center";
@@ -23,11 +24,13 @@ function displayPosts() {
         });
 }
 
+//handlePostClick is called when a post is clicked, it fetches the post details and displays them
 function handlePostClick(id, auto = false) {
     fetch(`${API_URL}/${id}`)
         .then(res => res.json())
         .then(post => {
             const details = document.getElementById('details');
+            //innerHTML is used to set the content of the details section
             details.innerHTML = `
                 <h3>${post.title}</h3>
                 <img src="${post.image || ''}" alt="${post.title}" style="max-width:100%;border-radius:6px;margin-bottom:1rem;">
@@ -36,6 +39,7 @@ function handlePostClick(id, auto = false) {
                 <button id="edit-btn">Edit</button>
                 <button id="delete-btn">Delete</button>
             `;
+            //active class is toggled on the clicked post to highlight it
             document.querySelectorAll('#posts li').forEach(li => {
                 li.classList.toggle('active', li.dataset.id == id);
             });
@@ -44,6 +48,7 @@ function handlePostClick(id, auto = false) {
         });
 }
 
+// showEditForm is called to display the edit form with the post details pre-filled
 function showEditForm(post) {
     const form = document.getElementById('edit-post-form');
     form.classList.remove('hidden');
@@ -77,6 +82,7 @@ function showEditForm(post) {
     };
 }
 
+// deletePost is called to delete a post by its ID
 function deletePost(id) {
     fetch(`${API_URL}/${id}`, { method: 'DELETE' })
         .then(() => {
@@ -85,6 +91,7 @@ function deletePost(id) {
         });
 }
 
+// addNewPostListener is called to handle the submission of the new post form
 function addNewPostListener() {
     const form = document.getElementById('new-post-form');
     if (!form) return;
@@ -107,6 +114,7 @@ function addNewPostListener() {
     };
 }
 
+// main function enables the app by displaying posts and setting up event listeners
 function main() {
     displayPosts();
     addNewPostListener();
