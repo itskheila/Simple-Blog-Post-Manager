@@ -121,3 +121,40 @@ function main() {
 }
 
 document.addEventListener('DOMContentLoaded', main);
+
+
+
+
+///////////
+
+function LongestWord(sen) { 
+
+  // code goes here 
+  let allWords = [];
+  let currentWord = "";
+
+  for (let i=0; i<sen.length; i + 1){
+    let char = sen[i];
+
+    const isLetter= (char >= 'a' && char <= 'z') || (char >= "A" && char <='Z');
+    const isNumber = (char >='0' && char <= '9');
+
+      if (isLetter || isNumber){
+        let currentWord = currentWord + char;
+        return currentWord;
+
+      } else {
+          if (currentWord.length > 0){
+            allWords.push(currentWord);
+            
+          }
+          currentWord = "";
+      }
+  }
+
+}
+console.log(LongestWord("fun&!! time"));
+
+   
+// keep this function call here 
+console.log(LongestWord(readline()));
