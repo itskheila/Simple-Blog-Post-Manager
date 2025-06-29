@@ -5,7 +5,7 @@ function displayPosts() {
         .then(res => res.json())
         .then(posts => {
             const postsList = document.getElementById('posts');
-            postsList.innerHTML = ''; // Clear existing posts
+            postsList.innerHTML = '';
             posts.forEach((post, idx) => {
                 const li = document.createElement('li'); // Create a new list item for each post
                 li.innerHTML = `
