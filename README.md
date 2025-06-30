@@ -16,14 +16,14 @@ A simple web application to manage blog posts. You can view, add, edit, and dele
 
 2. **Install Dependencies**
    - Install [json-server](https://github.com/typicode/json-server) globally if you haven't:
-     ```sh
+     
      npm install -g json-server@0.17.4
 
 3. **Start the Fake API**
    - In your project folder, run:
      
      json-server db.json
-     ```
+     
    - The API used: [http://localhost:3000/posts]
 
 4. **Open the App**
